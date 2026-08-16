@@ -23,15 +23,24 @@ dsh plugin --profile web add @marlonlau/dsh-wallpaper-engine
 
 该命令会写入依赖，并自动把包追加进 `dsh.profile.bundles`；随后重启 `dsh web` 生效（客户端改动刷新页面即可）。
 
-### 本地开发安装（file: 引用源码目录）
+### 从 GitHub 仓库安装（开发调试）
+
+插件包已在 npm 发布，仓库安装仅供开发调试（需要 Node.js >= 18 与 git）：
 
 ```powershell
-cd "$env:DSH_HOME\profiles\web"
-dsh plugin --profile web add file:<本目录绝对路径>
+# 1. 克隆仓库
+git clone https://github.com/marlonLau/dsh-wallpaper-engine.git
+cd dsh-wallpaper-engine
+
+# 2. 把插件包链接进 web profile（本插件为单包、零依赖、无构建步骤）
+dsh plugin --profile web add "link:$PWD"
+
+# 3. 重启 dsh web
+dsh web
 ```
 
-等价手动方式：在 profile 的 `package.json` 里加依赖
-`"@marlonlau/dsh-wallpaper-engine": "<npm 版本号或 file: 本地路径>"`，并把它追加进 `dsh.profile.bundles`，然后 `pnpm install`。
+> 等价手动方式：在 profile 的 `package.json` 里加依赖
+> `"@marlonlau/dsh-wallpaper-engine": "link:<仓库绝对路径>"`，并把它追加进 `dsh.profile.bundles`，然后 `pnpm install`。
 
 ## 宿主路由
 
