@@ -1,6 +1,6 @@
 {
   "name": "@marlonlau/dsh-wallpaper-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-click DSH background switcher backed by local Wallpaper Engine images/videos (WE Web API first, Steam workshop/myprojects directory scan fallback)",
   "homepage": "https://github.com/marlonLau/dsh-wallpaper-engine#readme",
   "bugs": {
