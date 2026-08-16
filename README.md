@@ -78,3 +78,7 @@ dsh web
 - 通过 WE API `POST /api/wallpaper/set` 联动设置 Windows 桌面壁纸
 - 定时轮换 / 播放列表
 - 毛玻璃强度、暗化程度可调
+
+## 📄 License
+
+[MIT](LICENSE)
