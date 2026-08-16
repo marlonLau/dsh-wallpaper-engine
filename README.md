@@ -19,7 +19,7 @@ DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（�
 
 ![背景应用效果](imgs/screenshot-2.png)
 
-<video src="imgs/demo.mp4" controls muted loop preload="metadata" width="720"></video>
+![动态演示](imgs/demo.gif)
 
 ## 安装（以 web profile 为例）
 
