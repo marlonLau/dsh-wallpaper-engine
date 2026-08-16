@@ -1,0 +1,16 @@
+# dependencies / install artifacts
+node_modules/
+.pnpm-store/
+
+# local runtime artifacts (never publish these — they contain machine paths)
+scripts/restart.log
+scripts/restart.log.*
+*.log
+
+# credentials
+.npmrc
+.env
+
+# editor / OS
+.DS_Store
+Thumbs.db
