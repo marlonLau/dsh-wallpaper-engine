@@ -6,7 +6,7 @@ DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（�
 
 - **壁纸库**：侧边栏底部按钮打开选择面板（缩略图网格 + 搜索）。
 - **两种素材来源**（`/we/list?source=auto` 自动选择）：
-  1. **Wallpaper Engine Web API**：WE 设置里开启「允许其他应用程序控制」后，走 `http://localhost:26384/api/wallpaper/list`；
+  1. **Wallpaper Engine Web API**：WE 自带的本地 Web 服务（默认 `http://localhost:26384/api/wallpaper/list`），仅在 WE 运行且其本地 Web 服务可用时生效；未启用/不可用时自动回退目录扫描；
   2. **目录扫描（回退）**：自动发现所有 Steam 库（读取注册表 + `libraryfolders.vdf`），扫描 `steamapps/workshop/content/431960/*`（创意工坊）和 `steamapps/common/wallpaper_engine/projects/myprojects/*`（本地项目），解析 `project.json`。
 - **一键应用**：图片 → CSS 背景；视频 → 静音循环 `<video>`；3D 场景 / 网页壁纸 → 用其 `preview.jpg` 静态展示。应用后 App 框架与侧边栏变为半透明 + 毛玻璃（`backdrop-filter`），壁纸透出。
 - **明暗跟随**：勾选后按壁纸亮度自动切换 DSH 深色 / 浅色主题（`theme.setTheme`）。
