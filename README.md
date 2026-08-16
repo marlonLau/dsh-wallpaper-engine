@@ -15,16 +15,23 @@ DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（�
 
 ## 安装（以 web profile 为例）
 
+### 从 npm 安装（推荐）
+
 ```powershell
-# 1) 把本目录放到任意位置，然后在 profile 目录安装：
+dsh plugin --profile web add @marlonlau/dsh-wallpaper-engine
+```
+
+该命令会写入依赖，并自动把包追加进 `dsh.profile.bundles`；随后重启 `dsh web` 生效（客户端改动刷新页面即可）。
+
+### 本地开发安装（file: 引用源码目录）
+
+```powershell
 cd "$env:DSH_HOME\profiles\web"
 dsh plugin --profile web add file:<本目录绝对路径>
-
-# 2) 重启 dsh web 使宿主半区生效（客户端改动刷新页面即可）
 ```
 
 等价手动方式：在 profile 的 `package.json` 里加依赖
-`"dsh-wallpaper-engine": "file:<绝对路径>"`，并把它追加进 `dsh.profile.bundles`，然后 `pnpm install`。
+`"@marlonlau/dsh-wallpaper-engine": "<npm 版本号或 file: 本地路径>"`，并把它追加进 `dsh.profile.bundles`，然后 `pnpm install`。
 
 ## 宿主路由
 
@@ -41,8 +48,13 @@ dsh plugin --profile web add file:<本目录绝对路径>
 ## 开发
 
 - 宿主半区：`lib/index.js`（Node，`inject: ['webServer']`）
-- 客户端半区：`lib/client.js`（浏览器，`inject: ['slots', 'theme']`，手写 CJS bundle，`window.__ModuleLoader__.load(...)`）
+- 客户端半区：`lib/client.js`（浏览器，`inject: ['theme', 'workspaces']`，手写 CJS bundle，`window.__ModuleLoader__.load(...)`）
 - 改 `lib/client.js` 后刷新页面即可生效；改 `lib/index.js` 需重启 `dsh web`。
+
+## 仓库
+
+- 源码：<https://github.com/marlonLau/dsh-wallpaper-engine>
+- npm：<https://www.npmjs.com/package/@marlonlau/dsh-wallpaper-engine>
 
 ## 后续可做
 

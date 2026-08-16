@@ -1,19 +1,35 @@
 {
-  "name": "dsh-wallpaper-engine",
+  "name": "@marlonlau/dsh-wallpaper-engine",
   "version": "0.1.0",
   "description": "One-click DSH background switcher backed by local Wallpaper Engine images/videos (WE Web API first, Steam workshop/myprojects directory scan fallback)",
+  "homepage": "https://github.com/marlonLau/dsh-wallpaper-engine#readme",
+  "bugs": {
+    "url": "https://github.com/marlonLau/dsh-wallpaper-engine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marlonLau/dsh-wallpaper-engine.git"
+  },
+  "license": "MIT",
+  "author": "",
   "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "files": [
     "lib",
     "icon.jpg",
     "cordis.patch.yml",
     "README.md"
   ],
-  "exports": {
-    ".": "./lib/index.js",
-    "./client": "./lib/client.js",
-    "./package.json": "./package.json"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dsh": {
     "bundle": {
@@ -26,6 +42,5 @@
         "workspaces"
       ]
     }
-  },
-  "license": "MIT"
+  }
 }
