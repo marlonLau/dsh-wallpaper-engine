@@ -1,10 +1,10 @@
 # dsh-wallpaper-engine
 
-DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（图片 / 视频）里选一张，一键应用到 DSH 界面背景，并可联动切换 DSH 深/浅色主题。
+DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（图片 / 视频，目前只支持这2种）里选一张，一键应用到 DSH 界面背景，并可联动切换 DSH 深/浅色主题。
 
 ## 功能
 
-- **壁纸库**：侧边栏底部 🖼 按钮打开选择面板（缩略图网格 + 搜索）。
+- **壁纸库**：侧边栏底部按钮打开选择面板（缩略图网格 + 搜索）。
 - **两种素材来源**（`/we/list?source=auto` 自动选择）：
   1. **Wallpaper Engine Web API**：WE 设置里开启「允许其他应用程序控制」后，走 `http://localhost:26384/api/wallpaper/list`；
   2. **目录扫描（回退）**：自动发现所有 Steam 库（读取注册表 + `libraryfolders.vdf`），扫描 `steamapps/workshop/content/431960/*`（创意工坊）和 `steamapps/common/wallpaper_engine/projects/myprojects/*`（本地项目），解析 `project.json`。
@@ -12,6 +12,14 @@ DSH Web GUI 的一键换背景插件：从本机 Wallpaper Engine 素材库（�
 - **明暗跟随**：勾选后按壁纸亮度自动切换 DSH 深色 / 浅色主题（`theme.setTheme`）。
 - **持久化**：当前壁纸与设置存 `localStorage`，刷新不丢；额外目录等配置存 `$DSH_HOME/storages/dsh-wallpaper-engine.json`。
 - **随机 / 关闭背景**：一键随机换，或一键恢复 DSH 默认背景。
+
+### 功能展示
+
+![壁纸选择面板](imgs/screenshot-1.png)
+
+![背景应用效果](imgs/screenshot-2.png)
+
+![动态演示](imgs/demo.gif)
 
 ## 安装（以 web profile 为例）
 
